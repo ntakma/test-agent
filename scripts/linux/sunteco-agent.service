@@ -1,0 +1,15 @@
+[Unit]
+Description=Sunteco Collector Metrics Agents
+After=network.target
+
+
+[Service]
+Type=simple
+User=root
+Restart=on-failure
+ExecStart=/usr/bin/sun-agent
+StartLimitInterval=10
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
